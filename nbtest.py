@@ -1,9 +1,6 @@
-# notebook_runner.py
- 
-import nbformat
 import os
 import sys
-
+import nbformat
 from nbconvert.preprocessors import ExecutePreprocessor
     
 def run_notebook(notebook_path):
@@ -32,7 +29,7 @@ def run_notebook(notebook_path):
 
 # check if argument is file or directory
 fp = os.path.abspath(sys.argv[1])
-if os.path.isfile(fp):
+if os.path.isfile(fp) and fp.endswith('.ipynb'):
     mode = 'single'
     notebook_path = fp
     print("notebook path: ",notebook_path)
@@ -42,6 +39,8 @@ elif os.path.isdir(fp):
     for file in os.listdir(fp):
         if file.endswith(".ipynb"):
             notebook_path.append(os.path.join(fp,file))
+    if len(notebook_path) == 0:
+        print("Could not find notebooks at \'",sys.argv[1],"\'")
     #print('notebooks: ',*notebook_path, sep = '\n')
 else:
     print("Could not find notebooks at \'",sys.argv[1],"\'")    
