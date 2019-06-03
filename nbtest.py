@@ -1,3 +1,8 @@
+# Checks that a jupyter notebook, or notebooks within a directory, run without error
+# To use, call `$ python nbtest.py <NBPATH>` 
+# where <NBPATH> is the path (abs or rel) to the notebook or directory of notebooks
+
+
 import os
 import sys
 import nbformat
