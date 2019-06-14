@@ -49,14 +49,14 @@ elif os.path.isdir(fp):
         raise SystemExit("Could not find notebooks in directory: \'",sys.argv[1],"\'")
         #print('notebooks: ',*notebook_path, sep = '\n')
 else:
-    Raise ValueError("Invalid argument: ",sys.argv[1],"\n Please input a jupyter notebook or directory of notebooks.")
+    raise SystemExit("Invalid argument: ",sys.argv[1],"\n Please input a jupyter notebook or directory of notebooks.")
 
 # test notebook; if directory, test all notebooks
 if mode == 'single':
     if __name__ == '__main__':
         nb, errors = run_notebook(notebook_path)
         if errors:
-            Raise ValueError("Notebook execution failed. Errors: {}".format(errors))
+            raise SystemExit("Notebook execution failed. Errors: {}".format(errors))
         elif not errors:
             print("Notebook execution successful.")
 
@@ -65,6 +65,6 @@ elif mode == 'multiple':
         if __name__ == '__main__':
             nb, errors = run_notebook(i)
         if errors:
-            Raise ValueError("Notebook execution failed. Errors: {}".format(errors))
+            raise SystemExit("Notebook execution failed. Errors: {}".format(errors))
         elif not errors:
             print("Notebook execution successful.")
