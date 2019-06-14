@@ -46,18 +46,25 @@ elif os.path.isdir(fp):
         if file.endswith(".ipynb"):
             notebook_path.append(os.path.join(fp,file))
     if len(notebook_path) == 0:
-        print("Could not find notebooks at \'",sys.argv[1],"\'")
-    #print('notebooks: ',*notebook_path, sep = '\n')
+        raise SystemExit("Could not find notebooks in directory: \'",sys.argv[1],"\'")
+        #print('notebooks: ',*notebook_path, sep = '\n')
 else:
-    print("Could not find notebooks at \'",sys.argv[1],"\'")
+    Raise ValueError("Invalid argument: ",sys.argv[1],"\n Please input a jupyter notebook or directory of notebooks.")
 
 # test notebook; if directory, test all notebooks
 if mode == 'single':
     if __name__ == '__main__':
         nb, errors = run_notebook(notebook_path)
-        print("notebook errors: ",errors)
+        if errors:
+            Raise ValueError("Notebook execution failed. Errors: {}".format(errors))
+        elif not errors:
+            print("Notebook execution successful.")
+
 elif mode == 'multiple':
     for i in notebook_path:
         if __name__ == '__main__':
             nb, errors = run_notebook(i)
-            print("notebook: ",i,"\n errors: ",errors)
+        if errors:
+            Raise ValueError("Notebook execution failed. Errors: {}".format(errors))
+        elif not errors:
+            print("Notebook execution successful.")
