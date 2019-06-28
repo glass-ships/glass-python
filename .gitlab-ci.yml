@@ -3,6 +3,6 @@ image: detlab/centroot:0.1
 test_variable:
   stage: test
   script:
-    - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.com/glass-ships/racas-presentation.git
-    - cd racas-presentation
+    - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.com/glass-ships/thingstuff.git
+    - cd thingstuff
     - pwd
