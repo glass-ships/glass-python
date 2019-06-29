@@ -1,8 +1,10 @@
 image: detlab/centroot:0.1
 
+before_script:
+    - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.com/glass-ships/thingstuff.git
+
 test_variable:
   stage: test
   script:
-    - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.com/glass-ships/thingstuff.git
     - cd thingstuff
     - pwd
