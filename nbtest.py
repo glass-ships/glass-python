@@ -6,9 +6,9 @@ import os
 import sys
 import nbformat
 from nbconvert.preprocessors import ExecutePreprocessor 
-from memory_profiler import profile
+#from memory_profiler import profile
 
-@profile
+#@profile
 def run_notebook(notebook_path):
     nb_name, _ = os.path.splitext(os.path.basename(notebook_path))
     dirname = os.path.dirname(notebook_path)
@@ -66,7 +66,7 @@ elif mode == 'multiple':
     for i in notebook_path:
         if __name__ == '__main__':
             nb, errors = run_notebook(i)
-        if errors:
-            raise SystemExit("Notebook execution failed. Errors: {}".format(errors))
-        elif not errors:
-            print("Notebook execution successful.")
+    if errors:
+        raise SystemExit("Notebook execution failed. Errors: {}".format(errors))
+    elif not errors:
+        print("Notebook execution successful.")
