@@ -1,7 +1,7 @@
 #########################################################################################
 ##   This script manually sets environment variables set by $ROOTSYS/bin/thisroot.sh   ##
 ##   Mainly as a way of avoiding conflicts between user pythons and python used to     ##
-##   compile ROOT from source. ROOT is now packaged in conda - I recommend facoring    ##
+##   compile ROOT from source. ROOT is now packaged in conda - I recommend factoring   ##
 ##   your code to be compatible with conda ROOT.                                       ##
 #########################################################################################
 
