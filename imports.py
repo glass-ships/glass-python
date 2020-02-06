@@ -16,14 +16,10 @@ from scipy import stats
 # Plotting modules
 import matplotlib.pyplot as plt
 from matplotlib import style
-#import matplotlib.image as mpimg
+style.use('seaborn-whitegrid')
 %matplotlib inline
-style.use('ggplot')
-
-from bokeh.plotting import figure, output_notebook, show
-output_notebook(hide_banner=True)
 
 # LaTeX rendering in plots 
 from matplotlib import rc
-rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
 rc('text', usetex=True)
+#rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
