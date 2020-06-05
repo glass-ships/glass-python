@@ -1,11 +1,7 @@
-image: glasslabs/centroot:0.3
-
-before_script:
-    - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.com/glass-ships/thingstuff.git
-
-test_variable:
-  stage: test
-  script:
-    - source /opt/anaconda3/etc/profile.d/conda.sh &&  conda activate base
-    - source /opt/root6.18/bin/thisroot.sh
-    - python nbtest.py tests/
+job0: 
+    image: glasslabs/centroot:0.3
+    stage: test
+      script:
+        - source /opt/anaconda3/etc/profile.d/conda.sh &&  conda activate base
+        - source /opt/root6.18/bin/thisroot.sh
+        - python nbtest.py tests/
