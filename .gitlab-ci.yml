@@ -1,5 +1,5 @@
 job0: 
-    image: glasslabs/centroot
+    image: glasslabs/centroot:0.5
     stage: test
     script:
         - source /opt/anaconda3/etc/profile.d/conda.sh &&  conda activate base
