@@ -5,7 +5,7 @@
 import os, sys
 from math import *
 
-import pandas
+import pandas as pd
 import numpy as np
 #np.set_printoptions(threshold=np.inf)
 
