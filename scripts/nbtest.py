@@ -1,6 +1,9 @@
-# Checks that a jupyter notebook, or notebooks within a directory, run without error
-# To use, call `$ python nbtest.py <NBPATH>` 
-# where <NBPATH> is the path (abs or rel) to the notebook or directory of notebooks
+### Checks that a jupyter notebook, or notebooks within a directory, run without error
+### To use, call `$ python nbtest.py <NBPATH>` 
+### where <NBPATH> is the path (abs or rel) to the notebook or directory of notebooks
+###
+### Author: glass-ships
+### Last updated: 2019
 
 import os
 import sys

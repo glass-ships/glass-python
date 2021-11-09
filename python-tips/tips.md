@@ -1,4 +1,8 @@
-#### Python - List indexing
+# Python Tips # 
+
+Just a collection of handy things to know about Python and how to interact with its objects.
+
+#### Lists - Indexing
     
     a[start:stop]  # items start through stop-1
     a[start:]      # items start through the rest of the array
